@@ -58,6 +58,8 @@ weapons. We can also list ghosts, and all cuddly toys together.
 | | | | http://localhost:8000/api/cuddly_toys/monkeys/ |
 | | | | http://localhost:8000/api/weapons/ |
 | | | | http://localhost:8000/ghosts/ |
+-------------------------------------
+
 Read GET id http://localhost:8000/api/cuddly_toys/dogs/
 {id}
 http://localhost:8000/api/cuddly_toys/monkeys
