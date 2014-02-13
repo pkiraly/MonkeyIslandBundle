@@ -51,14 +51,13 @@ Usage of the application
 In the application we can create, list/read, update and delete cuddly toys (dogs and monkeys), and
 weapons. We can also list ghosts, and all cuddly toys together.
 
--------------------------------------
 | Operation | HTTP method | Parameter | URL |
+| --- | --- | --- | --- |
 | List | GET | n/a | http://localhost:8000/api/cuddly_toys/ |
-| | | | http://localhost:8000/api/cuddly_toys/dogs/ |
-| | | | http://localhost:8000/api/cuddly_toys/monkeys/ |
-| | | | http://localhost:8000/api/weapons/ |
-| | | | http://localhost:8000/ghosts/ |
--------------------------------------
+|  |  |  | http://localhost:8000/api/cuddly_toys/dogs/ |
+|  |  |  | http://localhost:8000/api/cuddly_toys/monkeys/ |
+|  |  |  | http://localhost:8000/api/weapons/ |
+|  |  |  | http://localhost:8000/ghosts/ |
 
 Read GET id http://localhost:8000/api/cuddly_toys/dogs/
 {id}
