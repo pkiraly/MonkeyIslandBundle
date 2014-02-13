@@ -51,89 +51,64 @@ Usage of the application
 In the application we can create, list/read, update and delete cuddly toys (dogs and monkeys), and
 weapons. We can also list ghosts, and all cuddly toys together.
 
-| Operation | HTTP method | Parameter | URL |
-| --- | --- | --- | --- |
-| List | GET | n/a | http://localhost:8000/api/cuddly_toys/ |
-|  |  |  | http://localhost:8000/api/cuddly_toys/dogs/ |
-|  |  |  | http://localhost:8000/api/cuddly_toys/monkeys/ |
-|  |  |  | http://localhost:8000/api/weapons/ |
-|  |  |  | http://localhost:8000/ghosts/ |
+Operation | HTTP method | Parameter | URL |
+--- | --- | --- | --- |
+List | GET | n/a | http://localhost:8000/api/cuddly_toys/ |
+ |  |  | http://localhost:8000/api/cuddly_toys/dogs/ |
+ |  |  | http://localhost:8000/api/cuddly_toys/monkeys/ |
+ |  |  | http://localhost:8000/api/weapons/ |
+ |  |  | http://localhost:8000/ghosts/ |
+Read | GET | id | http://localhost:8000/api/cuddly_toys/dogs/{id}
+ |  |  | http://localhost:8000/api/cuddly_toys/monkeys/{id}
+ |  |  | http://localhost:8000/api/weapons/{id}
+Create | POST | JSON | http://localhost:8000/api/cuddly_toys/dogs/
+ |  |  | http://localhost:8000/api/cuddly_toys/monkeys/
+ |  |  | http://localhost:8000/api/weapons/
+Update | PUT | id, JSON | http://localhost:8000/api/cuddly_toys/dogs/{id}
+ |  |  | http://localhost:8000/api/cuddly_toys/monkeys/{id}
+ |  |  | http://localhost:8000/api/weapons/{id}
+Delete | DELETE | id | http://localhost:8000/api/cuddly_toys/dogs/{id}
+ |  |  | http://localhost:8000/api/cuddly_toys/monkeys/{id}
+ |  |  | http://localhost:8000/api/weapons/{id}
 
-Read GET id http://localhost:8000/api/cuddly_toys/dogs/
-{id}
-http://localhost:8000/api/cuddly_toys/monkeys
-/{id}
-http://localhost:8000/api/weapons/{id}
-Create POST JSON http://localhost:8000/api/cuddly_toys/dogs/
-http://localhost:8000/api/cuddly_toys/monkeys
-/
-http://localhost:8000/api/weapons/
-Update PUT id, JSON http://localhost:8000/api/cuddly_toys/dogs/
-{id}
-http://localhost:8000/api/cuddly_toys/monkeys
-/{id}
-http://localhost:8000/api/weapons/{id}
-Delete DELETE id http://localhost:8000/api/cuddly_toys/dogs/
-{id}
-http://localhost:8000/api/cuddly_toys/monkeys
-/{id}
-http://localhost:8000/api/weapons/{id}
 The id should be a numeric value, which is the identifier of the item under operation. If the identifier is
 not valid, the application returns 404 HTTP status code.
+
 The JSON string is an object with two mandatory elements. In case of dogs, and monkeys the elements
 are the “name” and the “energy_level”, in case of weapons the elements are “name” and
 “power_level”. If the mandatory elements are missing, the application returns 409 HTTP status code.
+
 • Dog/monkey example: {'name': 'Oscar', 'energy_level': 4}
 • Weapon example: {'name': 'water', 'power_level': 3}
+
 In case of create, update, and deletion the return value is a message about the success or the failure of
 the operation. In case of list and read, the JSON contains the records itself. If operation was
 successfull, the application return 200 HTTP status code.Example requests:
+
 create dogs
-curl -i -H "Accept:
-'energy_level': 4}"
-curl -i -H "Accept:
-'energy_level': 1}"
-curl -i -H "Accept:
-'energy_level': 3}"
-curl -i -H "Accept:
-'energy_level': 3}"
-application/json" -X POST -d "{'name': 'Oscar',
-http://localhost:8000/api/cuddly_toys/dogs/
-application/json" -X POST -d "{'name': 'Caesar',
-http://localhost:8000/api/cuddly_toys/dogs/
-application/json" -X POST -d "{'name': 'Lassie',
-http://localhost:8000/api/cuddly_toys/dogs/
-application/json" -X POST -d "{'name': 'Kantor',
-http://localhost:8000/api/cuddly_toys/dogs/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'Oscar', 'energy_level': 4}" http://localhost:8000/api/cuddly_toys/dogs/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'Caesar', 'energy_level': 1}" http://localhost:8000/api/cuddly_toys/dogs/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'Lassie', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/dogs/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'Kantor', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/dogs/
+
 create monkeys
-curl -i -H "Accept:
-'energy_level': 3}"
-curl -i -H "Accept:
-'energy_level': 1}"
-application/json" -X POST -d "{'name': 'Cheeta',
-http://localhost:8000/api/cuddly_toys/monkeys/
-application/json" -X POST -d "{'name': 'Tivadar',
-http://localhost:8000/api/cuddly_toys/monkeys/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'Cheeta', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/monkeys/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'Tivadar', 'energy_level': 1}" http://localhost:8000/api/cuddly_toys/monkeys/
+
 create weapons
-curl -i -H "Accept: application/json" -X
-3}" http://localhost:8000/api/weapons/
-curl -i -H "Accept: application/json" -X
-1}" http://localhost:8000/api/weapons/
-curl -i -H "Accept: application/json" -X
-2}" http://localhost:8000/api/weapons/
-curl -i -H "Accept: application/json" -X
-4}" http://localhost:8000/api/weapons/
-POST -d "{'name': 'water', 'power_level':
-POST -d "{'name': 'earth', 'power_level':
-POST -d "{'name': 'air', 'power_level':
-POST -d "{'name': 'fire', 'power_level':
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'water', 'power_level': 3}" http://localhost:8000/api/weapons/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'earth', 'power_level': 1}" http://localhost:8000/api/weapons/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'air', 'power_level': 2}" http://localhost:8000/api/weapons/
+ curl -i -H "Accept: application/json" -X POST -d "{'name': 'fire', 'power_level': 4}" http://localhost:8000/api/weapons/
+
 list all cuddly toys
-curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/
+ curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/
+
 list all dogs
-curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/
+ curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/
+
 list all monkeys
-curl -i -H "Accept: application/json"
-http://localhost:8000/api/cuddly_toys/monkeys/
+ curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/
 list all weapons
 curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/
 list ghosts
