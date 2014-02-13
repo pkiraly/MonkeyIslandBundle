@@ -1,0 +1,7 @@
+parameters:
+#    acme_join.example.class: NSDataRefinery\MonkeyIslandBundle\Example
+
+services:
+#    acme_join.example:
+#        class: %acme_join.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

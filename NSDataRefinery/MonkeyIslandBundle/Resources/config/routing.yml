@@ -1,0 +1,105 @@
+# dogs
+_create_dog:
+  pattern: /api/cuddly_toys/dogs/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Dog:create }
+  requirements:
+    _method: POST
+
+_get_dog:
+  pattern: /api/cuddly_toys/dogs/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Dog:get }
+  requirements:
+    _method: GET
+    id: "\d+"
+
+_delete_dog:
+  pattern: /api/cuddly_toys/dogs/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Dog:delete }
+  requirements:
+    _method: DELETE
+    id: "\d+"
+
+_update_dog:
+  pattern: /api/cuddly_toys/dogs/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Dog:update }
+  requirements:
+    _method: PUT
+    id: "\d+"
+
+_list_dogs:
+  pattern: /api/cuddly_toys/dogs/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Dog:list }
+
+# monkeys
+_create_monkey:
+  pattern: /api/cuddly_toys/monkeys/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Monkey:create }
+  requirements:
+    _method: POST
+
+_get_monkey:
+  pattern: /api/cuddly_toys/monkeys/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Monkey:get }
+  requirements:
+    _method: GET
+    id: "\d+"
+
+_delete_monkey:
+  pattern: /api/cuddly_toys/monkeys/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Monkey:delete }
+  requirements:
+    _method: DELETE
+    id: "\d+"
+
+_update_monkey:
+  pattern: /api/cuddly_toys/monkeys/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Monkey:update }
+  requirements:
+    _method: PUT
+    id: "\d+"
+
+_list_monkeys:
+  pattern: /api/cuddly_toys/monkeys/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Monkey:list }
+
+# weapons
+_create_weapon:
+  pattern: /api/weapons/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Weapon:create }
+  requirements:
+    _method: POST
+
+_get_weapon:
+  pattern: /api/weapons/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Weapon:get }
+  requirements:
+    _method: GET
+    id: "\d+"
+
+_delete_weapon:
+  pattern: /api/weapons/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Weapon:delete }
+  requirements:
+    _method: DELETE
+    id: "\d+"
+
+_update_weapon:
+  pattern: /api/weapons/{id}
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Weapon:update }
+  requirements:
+    _method: PUT
+    id: "\d+"
+
+_list_weapons:
+  pattern: /api/weapons/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Weapon:list }
+
+# cuddly toys
+_list_cuddly_toys:
+  pattern: /api/cuddly_toys/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:CuddlyToy:list }
+
+# ghost
+_list_ghost:
+  pattern: /ghosts/
+  defaults: { _controller: NSDataRefineryMonkeyIslandBundle:Ghost:list }
