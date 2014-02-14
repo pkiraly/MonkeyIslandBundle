@@ -96,9 +96,11 @@ curl -i -H "Accept: application/json" -X POST -d "{'name': 'Lassie', 'energy_lev
 curl -i -H "Accept: application/json" -X POST -d "{'name': 'Kantor', 'energy_level': 3}" \
   http://localhost:8000/api/cuddly_toys/dogs/
 
+
 create monkeys
  curl -i -H "Accept: application/json" -X POST -d "{'name': 'Cheeta', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/monkeys/
  curl -i -H "Accept: application/json" -X POST -d "{'name': 'Tivadar', 'energy_level': 1}" http://localhost:8000/api/cuddly_toys/monkeys/
+
 
 create weapons
  curl -i -H "Accept: application/json" -X POST -d "{'name': 'water', 'power_level': 3}" http://localhost:8000/api/weapons/
