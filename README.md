@@ -94,22 +94,27 @@ successfull, the application return 200 HTTP status code.
 
 ## Example requests:
 
-Example requests:
 create dogs
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'Oscar', 'energy_level': 4}" http://localhost:8000/api/cuddly_toys/dogs/`
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'Caesar', 'energy_level': 1}" http://localhost:8000/api/cuddly_toys/dogs/`
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'Lassie', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/dogs/`
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'Kantor', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/dogs/`
+```
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'Oscar', 'energy_level': 4}" http://localhost:8000/api/cuddly_toys/dogs/
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'Caesar', 'energy_level': 1}" http://localhost:8000/api/cuddly_toys/dogs/
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'Lassie', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/dogs/
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'Kantor', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/dogs/
+```
 
 create monkeys
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'Cheeta', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/monkeys/`
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'Tivadar', 'energy_level': 1}" http://localhost:8000/api/cuddly_toys/monkeys/`
+```
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'Cheeta', 'energy_level': 3}" http://localhost:8000/api/cuddly_toys/monkeys/
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'Tivadar', 'energy_level': 1}" http://localhost:8000/api/cuddly_toys/monkeys/
+```
 
 create weapons
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'water', 'power_level': 3}" http://localhost:8000/api/weapons/`
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'earth', 'power_level': 1}" http://localhost:8000/api/weapons/`
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'air', 'power_level': 2}" http://localhost:8000/api/weapons/`
-`curl -i -H "Accept: application/json" -X POST -d "{'name': 'fire', 'power_level': 4}" http://localhost:8000/api/weapons/`
+```
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'water', 'power_level': 3}" http://localhost:8000/api/weapons/
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'earth', 'power_level': 1}" http://localhost:8000/api/weapons/
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'air', 'power_level': 2}" http://localhost:8000/api/weapons/
+curl -i -H "Accept: application/json" -X POST -d "{'name': 'fire', 'power_level': 4}" http://localhost:8000/api/weapons/
+```
 
 list all cuddly toys
 
