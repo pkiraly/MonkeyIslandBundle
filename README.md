@@ -125,22 +125,26 @@ list ghosts
 `curl -i -H "Accept: application/json" http://localhost:8000/ghosts/`
 
 get individual dogs
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/1`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/2`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/3`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/4`
 
 get individual monkeys
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/1`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/2`
 
 get individual weapons
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/1`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/2`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/3`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/4`
 
 checking errors for non-existent values
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/5`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/3`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/5`
@@ -148,46 +152,60 @@ checking errors for non-existent values
 Note: these request return 404 HTTP code, and a JSON message.
 
 delete a dog
+
 `curl -i -H "Accept: application/json" -X DELETE http://localhost:8000/api/cuddly_toys/dogs/2`
 
 delete a monkey
+
 `curl -i -H "Accept: application/json" -X DELETE http://localhost:8000/api/cuddly_toys/monkeys/2`
 
 delete a weapon
+
 `curl -i -H "Accept: application/json" -X DELETE http://localhost:8000/api/weapons/2`
 
 checking the items - proving, that we really deleted them
+
 // checking deleted dog
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/2`
 
 // checking deleted monkey
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/2`
 
 // checking deleted weapon
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/2`
 
 Note: these request return 404 HTTP code, and a JSON message.
 
 // checking the lists (the deleted items will miss from these lists)
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/`
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/`
 
 change a dog
+
 `curl -i -H "Accept: application/json" -X PUT -d "{'name': 'Billy', 'energy_level': 2}" http://localhost:8000/api/cuddly_toys/dogs/3`
 
 // proving that the dog has been changed
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/3`
 
 change a monkey
+
 `curl -i -H "Accept: application/json" -X PUT -d "{'name': 'Billy', 'energy_level': 2}" http://localhost:8000/api/cuddly_toys/monkeys/1`
 
 // proving that the monkey has been changed
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/1`
 
 change a weapon
+
 `curl -i -H "Accept: application/json" -X PUT -d "{'name': 'mud', 'power_level': 2}" http://localhost:8000/api/weapons/3`
 
 // proving that the weapon has been changed
-curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/3
+
+`curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/3`
 
