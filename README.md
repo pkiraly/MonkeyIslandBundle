@@ -33,19 +33,24 @@ well.
 src/NSDataRefinery/MonkeyIslandBundle/ and several subdirectories underneath.
 
 2) open app/config/routing.yml, and append the file with these lines:
-`# NSDataRefineryMonkeyIslandBundle routes
+```
+# NSDataRefineryMonkeyIslandBundle routes
 _monkey_island:
-resource: "@NSDataRefineryMonkeyIslandBundle/Resources/config/routing.yml"`
+resource: "@NSDataRefineryMonkeyIslandBundle/Resources/config/routing.yml"
+```
 
 3) open app/AppKernel.php, and in registerBundles method add the following line into the $bundles
 array:
-`new NSDataRefinery\MonkeyIslandBundle\NSDataRefineryMonkeyIslandBundle(),`
+```
+new NSDataRefinery\MonkeyIslandBundle\NSDataRefineryMonkeyIslandBundle(),
+```
 
 ### Create database tables:
 run the following command in command line (supposing your are in /var/www/Symfony).
 
 ```
-$ php app/console doctrine:database:drop --force$ php app/console doctrine:database:create
+$ php app/console doctrine:database:drop --force
+$ php app/console doctrine:database:create
 $ php app/console doctrine:schema:update --force
 ```
 
