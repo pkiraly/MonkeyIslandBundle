@@ -54,7 +54,7 @@ $ php app/console doctrine:database:create
 $ php app/console doctrine:schema:update --force
 ```
 
-Usage of the application
+## Usage of the application
 In the application we can create, list/read, update and delete cuddly toys (dogs and monkeys), and
 weapons. We can also list ghosts, and all cuddly toys together.
 
@@ -85,14 +85,14 @@ The JSON string is an object with two mandatory elements. In case of dogs, and m
 are the “name” and the “energy_level”, in case of weapons the elements are “name” and
 “power_level”. If the mandatory elements are missing, the application returns 409 HTTP status code.
 
-• Dog/monkey example: {'name': 'Oscar', 'energy_level': 4}
-• Weapon example: {'name': 'water', 'power_level': 3}
+* Dog/monkey example: `{'name': 'Oscar', 'energy_level': 4}`
+* Weapon example: `{'name': 'water', 'power_level': 3}`
 
 In case of create, update, and deletion the return value is a message about the success or the failure of
 the operation. In case of list and read, the JSON contains the records itself. If operation was
 successfull, the application return 200 HTTP status code.
 
-Example requests:
+## Example requests:
 
 Example requests:
 create dogs
