@@ -1,21 +1,21 @@
-A simple REST API implementation with Symfony framework
-Monkey Island test application
+# A simple REST API implementation with Symfony framework
+## Monkey Island test application
 
 This project was created as a test project when I learnt the 
 PHP Symfony framework. It is a Symfony bundle, and implements
 CRUD operations over REST methods.
 
 
-Introduction
+## Introduction
 
 This application is a plugin for Symfony PHP framework. In Symfony-speak it is a bundle (under the
 name of GrambleMonkeyIslandBundle). To install it, follow these steps. If you already have a working
 Symfony, the best thing to do is to install a new one, just for be sure, that it doesn't have any conflict
 with my bundle.
 
-Installation
+## Installation
 
-Install Symfony
+### Install Symfony
 
 1) download Symfony's compressed file from http://symfony.com.
 
@@ -27,25 +27,25 @@ http://symfony.com/doc/current/quick_tour/the_big_picture.html. Important, that 
 webserver (with php app/console server:run command), and have to setup the database connection as
 well.
 
-Install the bundle:
+### Install the bundle:
 
 1) copy the zipped version of the bundle to the src/ directory, so you will have
 src/NSDataRefinery/MonkeyIslandBundle/ and several subdirectories underneath.
 
 2) open app/config/routing.yml, and append the file with these lines:
-# NSDataRefineryMonkeyIslandBundle routes
+`# NSDataRefineryMonkeyIslandBundle routes
 _monkey_island:
-resource: "@NSDataRefineryMonkeyIslandBundle/Resources/config/routing.yml"
+resource: "@NSDataRefineryMonkeyIslandBundle/Resources/config/routing.yml"`
 
 3) open app/AppKernel.php, and in registerBundles method add the following line into the $bundles
 array:
-new NSDataRefinery\MonkeyIslandBundle\NSDataRefineryMonkeyIslandBundle(),
+`new NSDataRefinery\MonkeyIslandBundle\NSDataRefineryMonkeyIslandBundle(),`
 
-Create database tables:
+### Create database tables:
 run the following command in command line (supposing your are in /var/www/Symfony).
 
-$ php app/console doctrine:database:drop --force$ php app/console doctrine:database:create
-$ php app/console doctrine:schema:update --force
+`$ php app/console doctrine:database:drop --force$ php app/console doctrine:database:create
+$ php app/console doctrine:schema:update --force`
 
 Usage of the application
 In the application we can create, list/read, update and delete cuddly toys (dogs and monkeys), and
