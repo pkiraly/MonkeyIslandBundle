@@ -105,18 +105,23 @@ create weapons
 `curl -i -H "Accept: application/json" -X POST -d "{'name': 'fire', 'power_level': 4}" http://localhost:8000/api/weapons/`
 
 list all cuddly toys
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/`
 
 list all dogs
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/dogs/`
 
 list all monkeys
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/cuddly_toys/monkeys/`
 
 list all weapons
+
 `curl -i -H "Accept: application/json" http://localhost:8000/api/weapons/`
 
 list ghosts
+
 `curl -i -H "Accept: application/json" http://localhost:8000/ghosts/`
 
 get individual dogs
